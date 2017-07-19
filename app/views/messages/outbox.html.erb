@@ -1,0 +1,11 @@
+Hello this is your outbox<br>
+<ul>
+<% @sent_messages.each do |message| %>
+   <li>
+        <%= message.to_user.username %>
+        <%= message.created_at.strftime("%m %d %Y") %><br>
+        <%= message.content %>
+   </li>     
+<% end %>
+</ul>
+<a href='/messages/new'>Create New Message</a> | <a href='/messages/show/inbox'>Inbox</a>  |  <a href='/users/show'>Contacts</a>  |  <a href="/logout">Logout</a>

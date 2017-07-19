@@ -1,0 +1,8 @@
+
+<a href='/messages/new'>Create New Message</a> | <a href='/messages/show/inbox'>Inbox</a>  |  <a href='/messages/show/outbox'>Outbox</a>  |  <a href="/logout">Logout</a><br>
+<h1>Contacts</h1>
+<ul>
+<% @contacts.each do |contact| %>
+    <li><%= contact.username %></li>
+<% end %>    
+</ul>

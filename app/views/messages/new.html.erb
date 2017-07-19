@@ -1,0 +1,22 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p style="color:red;"><%= error %></p>
+  <% end %>
+<% end %>
+
+<br>
+
+
+<h2>New Message</h2>
+<form action="/messages/<%= session[:user_id] %>/create" method="POST">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  To:<select name="to_user">
+      <% @users.each do |user| %>
+        <option value="<%= user.id %>"><%= user.username %></option>
+      <% end %>
+  </select><br><br>    
+  Message: <br><br>
+  <textarea name="content"></textarea><br>
+  <button type="submit">Send</button>
+</form>
+<br>

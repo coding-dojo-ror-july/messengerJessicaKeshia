@@ -1,0 +1,12 @@
+Hello this is your inbox
+<ul>
+<% @received_messages.each do |message| %>
+   <li>
+        <%= message.from_user.username %>
+        <%= message.created_at.strftime("%m %d %Y") %><br>
+        <%= message.content %>
+   </li>     
+<% end %>
+</ul>
+
+<a href='/messages/new'>Create New Message</a> | <a href='/messages/show/outbox'>Outbox</a>  |  <a href='/users/show'>Contacts</a>  |  <a href="/logout">Logout</a>
